@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Weather app</title>
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <h1>Hello, SmartNinja!</h1>
+    {% for oseba in seznam %}
+        <ul>
+            <li>{{ oseba.first_name }}</li>
+            <li>{{ oseba.last_name }}</li>
+            <li>{{ oseba.id }}</li>
+            <li>{{ oseba.email }}</li>
+            <li>{{ oseba.country }}</li>
+            <li>{{ oseba.SSN }}</li>
+        </ul>
+    {% endfor %}
+</body>
+</html>
