@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Weather app</title>
+{% extends "base.html" %}
 
-    <link rel="stylesheet" href="/assets/css/style.css">
-</head>
-<body>
+{% block content %}
+
     <h1>Hello, SmartNinja!</h1>
     {% for oseba in seznam %}
         <ul>
@@ -18,5 +13,9 @@
             <li>{{ oseba.SSN }}</li>
         </ul>
     {% endfor %}
-</body>
-</html>
+
+    <button class="btn btn-success">
+        <a href="/vreme">Pojdi na vreme</a>
+    </button>
+
+{% endblock content %}

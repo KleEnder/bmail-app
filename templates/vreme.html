@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Vreme</title>
-</head>
-<body>
+{%  extends "base.html" %}
+{%  block content %}
     <h2>Vreme v: {{ podatki.name }}.</h2>
     <p>Temperatura: {{ podatki.main.temp - 273 }} stopinj celzija.</p>
-</body>
-</html>
+    <p>Minimalna temperatura: {{ podatki.main.temp_min - 273 }} stopinj celzija.</p>
+    <p>Maksimalna temperatura: {{ podatki.main.temp_max - 273 }} stopinj celzija.</p>
+    <p>Opis trenutnega vremena: {{ podatki.weather[0].description }}</p>
+    <p>Kelvin temperatura: {{ podatki.main.temp  }}</p>
+    <p>Pritisk: {{ podatki.main.pressure }} hPa.</p>
+    <p>Vlaznost: {{ podatki.main.humidity}}%.</p>
+{% endblock content %}
