@@ -1,10 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="well">
+        <h1>You can edit this message</h1>
+        <form action="/single_message/{{ message.key.id() }}/edit" method="post">
+            <label for="in_message">Message:</label>
+            <br>
+            <br>
+            <input name="edit_message" value={{ message.message }} id="in_message">
+            <br>
+            <br>
+            <label for="in_sender">Sender:</label>
+            <br>
+            <br>
+            <input name="edit_sender" type="email" value={{ message.sender }} id="in_sender">
+            <br>
+            <br>
+            <label for="in_receiver">Receiver:</label>
+            <br>
+            <br>
+            <input name="edit_receiver" type="email" value={{ message.receiver }} id="in_receiver">
+            <br>
+            <br>
+            <button class="btn btn-success" type="submit">Ok</button>
+        </form>
+    </div>
+{% endblock content %}

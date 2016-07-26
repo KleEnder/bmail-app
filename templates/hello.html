@@ -1,21 +1,43 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <div class="jumbotron">
+        <h1>Hello, Bmailer in Bmail!</h1>
 
-    <h1>Hello, Bmailer in app!</h1>
-    {% for oseba in seznam %}
-        <ul>
-            <li>{{ oseba.first_name }}</li>
-            <li>{{ oseba.last_name }}</li>
-            <li>{{ oseba.id }}</li>
-            <li>{{ oseba.email }}</li>
-            <li>{{ oseba.country }}</li>
-            <li>{{ oseba.SSN }}</li>
-        </ul>
-    {% endfor %}
+        <br>
+        <br>
 
-    <button class="btn btn-success">
-        <a href="/vreme">Pojdi na vreme</a>
-    </button>
+        <button class="btn btn-success">
+            <a href="/vreme">Pojdi na vreme</a>
+        </button>
+
+        <br>
+        <br>
+
+        <button class="btn btn-success">
+            <a href="/all_messages">Pojdi na vsa sporocila</a>
+        </button>
+
+        <br>
+        <br>
+
+        <button class="btn btn-success">
+            <a href="/received_mail">Pojdi na prejeta sporocila</a>
+        </button>
+
+        <br>
+        <br>
+
+        <button class="btn btn-success">
+            <a href="/sent_mail">Pojdi na poslana sporocila</a>
+        </button>
+
+        <br>
+        <br>
+
+        <button class="btn btn-success">
+            <a href="/message">Pojdi na posiljanje sporocila</a>
+        </button>
+    </div>
 
 {% endblock content %}

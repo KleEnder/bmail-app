@@ -18,19 +18,21 @@
     </head>
 
     <body>
-        {% if prijavljen %}
-            {% block content %}
-            {% endblock content %}
-            <br>
-            <p>
-                <a href="{{ logout_url }}">Logout</a>
-            </p>
-        {% else %}
-            <h1>Hello anonymous Bmail-er.</h1>
-            <br>
-            <p>
-                <a href="{{ login_url }}">Login</a>
-            </p>
-        {% endif %}
+        <div class="container">
+            {% if prijavljen %}
+                {% block content %}
+                {% endblock content %}
+                <br>
+                <p>
+                    <a href="{{ logout_url }}">Logout</a>
+                </p>
+            {% else %}
+                <h1>Hello anonymous Bmail-er.</h1>
+                <br>
+                <p>
+                    <a href="{{ login_url }}">Login</a>
+                </p>
+            {% endif %}
+        </div>
     </body>
 </html>

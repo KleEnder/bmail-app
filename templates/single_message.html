@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="well">
+        <h1>Data of message:</h1>
+        <p>Id of message: {{ message.key.id() }}</p>
+        <p>Message content: {{ message.message }}</p>
+        <p>Sender of message: {{ message.sender }}</p>
+        <p>Receiver of message: {{ message.receiver }}</p>
+        <a href="/single_message/{{ message.key.id() }}/edit">Edit</a>
+        <a href="/single_message/{{ message.key.id() }}/delete">Delete</a>
+    </div>
+{% endblock content %}

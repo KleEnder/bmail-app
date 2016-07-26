@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="well">
+        <h1>Do you want to delete message</h1>
+        <form action="/single_message/{{ message.key.id() }}/delete" method="post">
+          <button class="btn btn-danger" type="submit">Delete message</button>
+        </form>
+    </div>
+
+{% endblock content %}

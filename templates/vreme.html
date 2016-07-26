@@ -1,11 +1,15 @@
 {%  extends "base.html" %}
 {%  block content %}
-    <h2>Vreme v: {{ podatki.name }}.</h2>
-    <p>Temperatura: {{ podatki.main.temp - 273 }} stopinj celzija.</p>
-    <p>Minimalna temperatura: {{ podatki.main.temp_min - 273 }} stopinj celzija.</p>
-    <p>Maksimalna temperatura: {{ podatki.main.temp_max - 273 }} stopinj celzija.</p>
-    <p>Opis trenutnega vremena: {{ podatki.weather[0].description }}</p>
-    <p>Kelvin temperatura: {{ podatki.main.temp  }}</p>
-    <p>Pritisk: {{ podatki.main.pressure }} hPa.</p>
-    <p>Vlaznost: {{ podatki.main.humidity}}%.</p>
+    <div class="well">
+        <h2>Vreme v mestu: {{ podatki.name }}.</h2>
+        <ul>
+            <li>Temperatura: {{ podatki.main.temp - 273 }} stopinj celzija.</li>
+            <li>Minimalna temperatura: {{ podatki.main.temp_min - 273 }} stopinj celzija.</li>
+            <li>Maksimalna temperatura: {{ podatki.main.temp_max - 273 }} stopinj celzija.</li>
+            <li>Opis trenutnega vremena: {{ podatki.weather[0].description }}</li>
+            <li>Kelvin temperatura: {{ podatki.main.temp  }}</li>
+            <li>Pritisk: {{ podatki.main.pressure }} hPa.</li>
+            <li>Vlaznost: {{ podatki.main.humidity}}%.</li>
+        </ul>
+    </div>
 {% endblock content %}

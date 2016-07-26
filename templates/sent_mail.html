@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1>Sent mail here!</h1>
+        {% for message in m_sender %}
+          <ul>
+                <li>Message is: {{ message.message }}.</li>
+                <li>Sender of message is: {{ message.sender }}.</li>
+                <li>Receiver of message is: {{ message.receiver }}.</li>
+                <li>Date of creation is: {{ message.date }}.</li>
+          </ul>
+        {% endfor %}
+    </div>
+
+{% endblock content %}
