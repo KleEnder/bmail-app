@@ -2,7 +2,10 @@
 
 {% block content %}
     <div class="well">
-        <h1>Do you want to delete message</h1>
+        <h2>Do you want to delete message</h2>
+        <a href="/" role="button" class="btn btn-warning">Pojdi na glavno stran</a>
+        <br>
+        <br>
         <form action="/single_message/{{ message.key.id() }}/delete" method="post">
           <button class="btn btn-danger" type="submit">Delete message</button>
         </form>

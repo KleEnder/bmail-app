@@ -1,43 +1,90 @@
 {% extends "base.html" %}
 
+{% block li1 %}
+    <li class="active"><a  class="page-scroll" href="/">Homepage </a></li>
+{% endblock li1 %}
+
+{% block li2 %}
+    <li><a  class="page-scroll" href="/all_messages">All Messages </a></li>
+{% endblock li2 %}
+
+{% block li3 %}
+    <li><a  class="page-scroll" href="/received_mail">Received mail </a></li>
+{% endblock li3 %}
+
+{% block li4 %}
+    <li><a  class="page-scroll" href="/sent_mail">Sent mail </a></li>
+{% endblock li4 %}
+
+{% block li5 %}
+    <li><a  class="page-scroll" href="/vreme">Vreme </a></li>
+{% endblock li5 %}
+
+{% block li6 %}
+    <li><a  class="page-scroll" href="/message">Sending mail </a></li>
+{% endblock li6 %}
+
 {% block content %}
     <div class="jumbotron">
         <h1>Hello, Bmailer in Bmail!</h1>
-
         <br>
         <br>
-
-        <button class="btn btn-success">
-            <a href="/vreme">Pojdi na vreme</a>
-        </button>
-
+        <a href="/vreme" role="button" class="btn btn-success">Pojdi na vreme</a>
         <br>
         <br>
-
-        <button class="btn btn-success">
-            <a href="/all_messages">Pojdi na vsa sporocila</a>
-        </button>
-
+        <a href="/all_messages" role="button" class="btn btn-success">Pojdi na vse maile</a>
         <br>
         <br>
-
-        <button class="btn btn-success">
-            <a href="/received_mail">Pojdi na prejeta sporocila</a>
-        </button>
-
+        <a href="/received_mail" role="button" class="btn btn-success">Pojdi na prejete maile</a>
         <br>
         <br>
-
-        <button class="btn btn-success">
-            <a href="/sent_mail">Pojdi na poslana sporocila</a>
-        </button>
-
+        <a href="/sent_mail" role="button" class="btn btn-success">Pojdi na poslane maile</a>
         <br>
         <br>
-
-        <button class="btn btn-success">
-            <a href="/message">Pojdi na posiljanje sporocila</a>
-        </button>
+        <a href="/message" role="button" class="btn btn-success">Pojdi na posiljanje maila</a>
+        <br>
+        <br>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Posiljanje maila</button>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Posiljanje maila</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="well">
+                            <form action='/result' method="post">
+                                <label for="in_message">Message:</label>
+                                <br>
+                                <br>
+                                <input name="message" id="in_message">
+                                <br>
+                                <br>
+                                <label for="in_sender">Sender:</label>
+                                <br>
+                                <br>
+                                <input name="sender" type="email" id="in_sender">
+                                <br>
+                                <br>
+                                <label for="in_receiver">Receiver:</label>
+                                <br>
+                                <br>
+                                <input name="receiver" type="email" id="in_receiver">
+                                <br>
+                                <br>
+                                <button class="btn btn-success" type="submit">Ok</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Zapri modalno okno</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 {% endblock content %}

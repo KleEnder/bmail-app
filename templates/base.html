@@ -18,19 +18,50 @@
     </head>
 
     <body>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">Bmail</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="Options of Bmail">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Opcije <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li>{% block li1 %}{% endblock li1 %}</li>
+                    <li>{% block li2 %}{% endblock li2 %}</li>
+                    <li>{% block li3 %}{% endblock li3 %}</li>
+                    <li>{% block li4 %}{% endblock li4 %}</li>
+                    <li>{% block li5 %}{% endblock li5 %}</li>
+                    <li>{% block li6 %}{% endblock li6 %}</li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
         <div class="container">
             {% if prijavljen %}
                 {% block content %}
                 {% endblock content %}
                 <br>
                 <p>
-                    <a href="{{ logout_url }}">Logout</a>
+                    <a href="{{ logout_url }}" role="button" class="btn btn-danger">Logout</a>
                 </p>
             {% else %}
                 <h1>Hello anonymous Bmail-er.</h1>
                 <br>
                 <p>
-                    <a href="{{ login_url }}">Login</a>
+                    <a href="{{ login_url }}" role="button" class="btn btn-primary">Login</a>
                 </p>
             {% endif %}
         </div>

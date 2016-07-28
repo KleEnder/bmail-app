@@ -2,7 +2,10 @@
 
 {% block content %}
     <div class="well">
-        <h1>Data of message:</h1>
+        <h2>Data of message:</h2>
+        <a href="/" role="button" class="btn btn-warning">Pojdi na glavno stran</a>
+        <br>
+        <br>
         <p>Id of message: {{ message.key.id() }}</p>
         <p>Message content: {{ message.message }}</p>
         <p>Sender of message: {{ message.sender }}</p>

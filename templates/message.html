@@ -1,8 +1,36 @@
 {% extends "base.html" %}
 
+{% block li1 %}
+    <li><a  class="page-scroll" href="/">Homepage </a></li>
+{% endblock li1 %}
+
+{% block li2 %}
+    <li><a  class="page-scroll" href="/all_messages">All Messages </a></li>
+{% endblock li2 %}
+
+{% block li3 %}
+    <li><a  class="page-scroll" href="/received_mail">Received mail </a></li>
+{% endblock li3 %}
+
+{% block li4 %}
+    <li><a  class="page-scroll" href="/sent_mail">Sent mail </a></li>
+{% endblock li4 %}
+
+{% block li5 %}
+    <li><a  class="page-scroll" href="/vreme">Vreme </a></li>
+{% endblock li5 %}
+
+{% block li6 %}
+    <li class="active"><a  class="page-scroll" href="/message">Sending mail </a></li>
+{% endblock li6 %}
+
 {% block content %}
 
-    <div class="well">
+      <div class="well">
+        <h2>Send a mail</h2>
+          <a href="/" role="button" class="btn btn-warning">Pojdi na glavno stran</a>
+        <br>
+        <br>
         <form action='/result' method="post">
             <label for="in_message">Message:</label>
             <br>
